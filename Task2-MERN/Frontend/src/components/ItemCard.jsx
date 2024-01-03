@@ -2,7 +2,7 @@ import React from "react";
 import { addItem } from "../utils/cartSlice";
 import { useDispatch } from "react-redux";
 
-const RestaurantCard = ({
+const ItemCard = ({
   id,
   title,
   price,
@@ -41,4 +41,4 @@ const RestaurantCard = ({
   );
 };
 
-export default RestaurantCard;
+export default ItemCard;

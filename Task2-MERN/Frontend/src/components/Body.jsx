@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import RestaurantCard from "./RestaurantCard";
+import ItemCard from "./ItemCard";
 import Shimmer from "./Shimmer";
 import { filterData } from "../utils/helper";
 
 const Body = () => {
-  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+  const [filteredItems, setFilteredItems] = useState([]);
   const [searchText, setSearchText] = useState("");
-  const [allRestaurants, setAllRestaurants] = useState([]);
+  const [allItems, setAllItems] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -19,8 +19,8 @@ const Body = () => {
       const json = await data.json();
       console.log(json);
 
-      setAllRestaurants(json);
-      setFilteredRestaurants(json);
+      setAllItems(json);
+      setFilteredItems(json);
       setLoading(false);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -44,8 +44,8 @@ const Body = () => {
         <button
           className="bg-orange-300 rounded-sm"
           onClick={() => {
-            const data = filterData(searchText, allRestaurants);
-            setFilteredRestaurants(data);
+            const data = filterData(searchText, allItems);
+            setFilteredItems(data);
           }}
         >
           Search
@@ -53,8 +53,8 @@ const Body = () => {
       </div>
 
       <div className="flex flex-wrap">
-        {filteredRestaurants.map((eachRestaurant) => (
-          <RestaurantCard {...eachRestaurant} />
+        {filteredItems.map((eachItem) => (
+          <ItemCard {...eachItem} />
         ))}
       </div>
     </div>

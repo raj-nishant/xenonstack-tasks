@@ -1,5 +1,5 @@
-export function filterData(searchText, allRestaurants) {
-  const filterData = allRestaurants.filter((eachRestaurant) => {
+export function filterData(searchText, allItems) {
+  const filterData = allItems.filter((eachRestaurant) => {
     return eachRestaurant?.info.name
       ?.toLowerCase()
       ?.includes(searchText.toLowerCase());

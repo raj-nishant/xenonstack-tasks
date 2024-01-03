@@ -3,9 +3,9 @@ const Contact = require("../models/contactModel");
 exports.handleContactFormSubmission = async (req, res) => {
   try {
     const { name, email, message } = req.body;
-
-    // Save the form data to MongoDB
+    // Create a new instance of the Contact model
     const newContact = new Contact({ name, email, message });
+
     await newContact.save();
 
     // Respond with a success message or any necessary data

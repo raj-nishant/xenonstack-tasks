@@ -1,5 +1,5 @@
 import React, { Component, Suspense, lazy } from "react";
-import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, createBrowserRouter } from "react-router-dom";
 
 import Body from "./components/Body";
 import Header from "./components/Header";
@@ -14,24 +14,6 @@ const About = lazy(() => {
   return import("./components/About");
 });
 
-/* My Food App structure will look like this, 
-            1) Header
-                - Logo
-                - Nav Items(right side)
-                - Cart
-            2) Body
-                - Search bar
-                - Restaurants List
-                    - Restaurant card
-                        - Image
-                        - Name
-                        - Rating
-            3) Footer
-                - Links
-                - Copyrights
-       
-*/
-
 const AppLayout = () => {
   return (
     <Provider store={store}>
@@ -42,8 +24,6 @@ const AppLayout = () => {
   );
 };
 
-// we are creating appRouter, this appRouter takes array(which includes list of paths)
-// this functionality given by react-router-dom
 const App = createBrowserRouter([
   {
     path: "/",
