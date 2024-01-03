@@ -34,17 +34,15 @@ const Header = function () {
             <li className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3">
               <Link to="/contact">Contact Us</Link>
             </li>
-            <Link to={"/cart"}>
-              <li>Cart {cartItems.length} </li>
-            </Link>
+
+            <li className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3">
+              <Link to="/cart">Cart {cartItems.length}</Link>
+            </li>
+            <li className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3">
+              <Link to="/login">login</Link>
+            </li>
           </ul>
         </div>
-
-        {isLoggedIn ? (
-          <button onClick={() => setIsLoggedIn(false)}>logout</button>
-        ) : (
-          <button onClick={() => setIsLoggedIn(true)}>login</button>
-        )}
       </div>
     </>
   );
