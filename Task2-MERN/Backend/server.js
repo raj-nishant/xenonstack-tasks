@@ -1,6 +1,9 @@
 const express = require("express");
 const app = express();
 const port = 8000;
+const mongoose = require("mongoose"); // Import mongoose
+
+// Replace the dbConnection with your actual database connection logic
 const connectDB = require("./db/dbConnection");
 const User = require("./db/user");
 const cors = require("cors");
@@ -10,6 +13,19 @@ app.use(express.json());
 
 // Enable CORS
 app.use(cors());
+
+// Connect to MongoDB
+connectDB();
+
+// Define a schema for the contact form data
+const contactSchema = new mongoose.Schema({
+  name: String,
+  email: String,
+  message: String,
+});
+
+// Create a Contact model based on the schema
+const Contact = mongoose.model("Contact", contactSchema);
 
 // Registration
 app.post("/register", async (req, res) => {
@@ -59,17 +75,12 @@ app.post("/api/contact", async (req, res) => {
     res.status(200).json({ success: true, message: successMessage });
   } catch (error) {
     console.error("Error submitting contact form:", error);
-    res
-      .status(500)
-      .json({
-        success: false,
-        message:
-          "An error occurred while submitting the form. Please try again.",
-      });
+    res.status(500).json({
+      success: false,
+      message: "An error occurred while submitting the form. Please try again.",
+    });
   }
 });
-
-connectDB();
 
 app.listen(port, () => {
   console.log("Server is listening on Port 8000");
