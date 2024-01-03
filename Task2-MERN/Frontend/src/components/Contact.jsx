@@ -22,7 +22,7 @@ const ContactUsForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/contact",
+        "https://xenonstack-mern.onrender.com/api/contact",
         formData
       );
       setSuccessMessage(response.data.message);
