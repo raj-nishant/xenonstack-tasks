@@ -3,7 +3,6 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
-import useOnline from "../utils/useOnline";
 
 const Body = () => {
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
