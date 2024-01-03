@@ -6,9 +6,9 @@ const Cart = () => {
   // console.log(cartItems);
   return (
     <>
-      <div className="font-bold">cart Items</div>
+      <div className="text-5xl text-center font-bold">cart Items</div>
 
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap mt-16">
         {cartItems.map((eachItem) => {
           return <CartMenu {...eachItem} />;
         })}
