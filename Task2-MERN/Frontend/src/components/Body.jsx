@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
-import { Link } from "react-router-dom";
 import { filterData } from "../utils/helper";
 
 const Body = () => {

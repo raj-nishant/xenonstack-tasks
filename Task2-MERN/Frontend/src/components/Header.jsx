@@ -1,19 +1,14 @@
-import { useState, useContext } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
-import UserContext from "../utils/UserContext";
 import { useSelector } from "react-redux";
 
 const Title = () => {
-  const { user } = useContext(UserContext);
-
   return (
     <h1 id="title" key="title">
       <img
         className="h-16 p-2"
         src="https://e7.pngegg.com/pngimages/938/880/png-clipart-graphics-computer-icons-restaurant-logo-food-before-volleyball-serve-food-orange.png"
       ></img>
-
-      <p>{user.name}</p>
     </h1>
   );
 };
