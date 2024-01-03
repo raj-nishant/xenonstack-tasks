@@ -61,12 +61,6 @@ const App = createBrowserRouter([
             <About />
           </Suspense>
         ),
-        children: [
-          {
-            path: "/about/profile",
-            element: <Profile />,
-          },
-        ],
       },
       {
         path: "/contact",
@@ -79,10 +73,5 @@ const App = createBrowserRouter([
     ],
   },
 ]);
-
-// // create root using createRoot
-// const root = ReactDOM.createRoot(document.getElementById("root"));
-// // passing react element inside root
-// root.render(<RouterProvider router={appRouter} />);
 
 export default App;
