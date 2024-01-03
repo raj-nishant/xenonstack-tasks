@@ -6,9 +6,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Error from "./components/Error";
 import Contact from "./components/Contact";
-// import RestaurantMenu from "./components/RestaurantMenu";
-import Profile from "./components/Profile";
-import Instamart from "./components/Instamart";
 import { Provider } from "react-redux";
 import store from "./utils/store";
 import Cart from "./components/Cart";
@@ -75,14 +72,6 @@ const App = createBrowserRouter([
         path: "/contact",
         element: <Contact />,
       },
-      {
-        path: "/instamart",
-        element: <Instamart />,
-      },
-      // {
-      //   path: "/restaurant/:id",
-      //   element: <RestaurantMenu />,
-      // },
       {
         path: "/cart",
         element: <Cart />,

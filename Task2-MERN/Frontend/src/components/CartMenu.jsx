@@ -1,5 +1,3 @@
-import { IMG_CDN_URL } from "../config";
-
 const CartMenu = (props) => {
   const { id, title, price, description, category, image, rating } = props;
 

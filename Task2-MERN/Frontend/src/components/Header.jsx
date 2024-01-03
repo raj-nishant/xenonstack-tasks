@@ -39,9 +39,6 @@ const Header = function () {
             <li className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3">
               <Link to="/contact">Contact Us</Link>
             </li>
-            <li className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3">
-              <Link to={"/instamart"}>Instamart</Link>
-            </li>
             <Link to={"/cart"}>
               <li>Cart {cartItems.length} </li>
             </Link>
