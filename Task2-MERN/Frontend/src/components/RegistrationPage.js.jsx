@@ -30,13 +30,14 @@ const RegistrationPage = () => {
         registrationData
       );
       setSuccessMessage("Registration successful!");
-      setErrorMessage(""); // Clear any previous error messages
+      setErrorMessage("");
       console.log(response.data);
 
-      // Redirect to the homepage after a successful registration
-      navigate("/login");
+      setTimeout(() => {
+        navigate("/login");
+      }, 1500);
     } catch (error) {
-      setSuccessMessage(""); // Clear any previous success messages
+      setSuccessMessage("");
       setErrorMessage("Registration failed. Please try again.");
       console.log(error);
     }
@@ -51,7 +52,9 @@ const RegistrationPage = () => {
       <div className="bg-white p-8 rounded shadow-md">
         <h1 className="text-2xl mb-4 font-bold">Registration Form</h1>
         {successMessage && (
-          <div className="text-green-500 mb-4">{successMessage}</div>
+          <div className="font-bold text-lg text-green-500 mb-4">
+            {successMessage}
+          </div>
         )}
         {errorMessage && (
           <div className="text-red-500 mb-4">{errorMessage}</div>

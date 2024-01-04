@@ -10,6 +10,8 @@ const LoginPage = () => {
     password: "",
   });
 
+  const [loading, setLoading] = useState(false); // New loading state
+
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
@@ -24,35 +26,37 @@ const LoginPage = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
 
+    // Set loading to true when starting the login attempt
+    setLoading(true);
+
     try {
       const response = await axios.post(
         "https://test-9pak.onrender.com/login",
         loginData
       );
-      const { success, message } = response.data;
 
-      if (success) {
-        setSuccessMessage("Login successful!");
-        setErrorMessage("");
-        console.log("Login Successfully");
+      setSuccessMessage("Login successful! Redirecting to home...");
+      setErrorMessage("");
+      console.log(response.data);
 
-        // Redirect to the homepage after a successful login
+      // Introduce a 1-second delay before navigating
+      setTimeout(() => {
         navigate("/");
-      } else {
-        setSuccessMessage("");
-        setErrorMessage(message);
-        console.log(message);
-      }
+      }, 1500);
     } catch (error) {
       setSuccessMessage("");
-      setErrorMessage("Login error. Please try again.");
+      setErrorMessage(
+        "Login error. Please try again or register for a new account."
+      );
       console.error("Login error", error);
+    } finally {
+      // Reset loading state regardless of success or failure
+      setLoading(false);
+      setLoginData({
+        username: "",
+        password: "",
+      });
     }
-
-    setLoginData({
-      username: "",
-      password: "",
-    });
   };
 
   return (
@@ -60,7 +64,9 @@ const LoginPage = () => {
       <div className="bg-white p-8 rounded shadow-md">
         <h1 className="text-2xl mb-4 font-bold">Login Page</h1>
         {successMessage && (
-          <div className="text-green-500 mb-4">{successMessage}</div>
+          <div className="font-bold text-lg text-green-500 mb-4">
+            {successMessage}
+          </div>
         )}
         {errorMessage && (
           <div className="text-red-500 mb-4">{errorMessage}</div>
@@ -93,8 +99,9 @@ const LoginPage = () => {
           <button
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
             type="submit"
+            disabled={loading} // Disable the button when loading is true
           >
-            Login
+            {loading ? "Logging in..." : "Login"}
           </button>
 
           <p className="mt-4">
