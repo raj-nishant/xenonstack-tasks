@@ -26,7 +26,7 @@ const RegistrationPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:8000/register",
+        "https://xenonstack-icy9.onrender.com/register",
         registrationData
       );
       setSuccessMessage("Registration successful!");

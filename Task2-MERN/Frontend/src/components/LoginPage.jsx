@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const LoginPage = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
+  const navigate = useNavigate();
 
   const [loginData, setLoginData] = useState({
     username: "",
@@ -13,46 +13,46 @@ const LoginPage = () => {
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
-  //submit function
-  const handleLoginSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await axios.post(
-        "http://localhost:8000/login",
-        loginData
-      );
-      const { success, message } = response.data;
-
-      if (success) {
-        setSuccessMessage("Login successful!");
-        setErrorMessage(""); // Clear any previous error messages
-        console.log("Login Successfully");
-
-        // Redirect to the homepage after a successful login
-        navigate("/");
-      } else {
-        setSuccessMessage(""); // Clear any previous success messages
-        setErrorMessage(message);
-        console.log(message);
-      }
-    } catch (error) {
-      setSuccessMessage(""); // Clear any previous success messages
-      setErrorMessage("Login error. Please try again.");
-      console.error("Login error", error);
-    }
-    setLoginData({
-      username: "",
-      password: "",
-    });
-  };
-
   const handleLoginChange = (e) => {
     const { name, value } = e.target;
     setLoginData((prevData) => ({
       ...prevData,
       [name]: value,
     }));
+  };
+
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post(
+        "https://xenonstack-icy9.onrender.com/login",
+        loginData
+      );
+      const { success, message } = response.data;
+
+      if (success) {
+        setSuccessMessage("Login successful!");
+        setErrorMessage("");
+        console.log("Login Successfully");
+
+        // Redirect to the homepage after a successful login
+        navigate("/");
+      } else {
+        setSuccessMessage("");
+        setErrorMessage(message);
+        console.log(message);
+      }
+    } catch (error) {
+      setSuccessMessage("");
+      setErrorMessage("Login error. Please try again.");
+      console.error("Login error", error);
+    }
+
+    setLoginData({
+      username: "",
+      password: "",
+    });
   };
 
   return (
