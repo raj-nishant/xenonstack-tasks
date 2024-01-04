@@ -20,10 +20,10 @@
 #### For running backend -> npm start
 
 # Key Features of this app 
-####  `Developed a centralized platform using React.JS, Redux and Tailwind CSS`
-#### `reduced website loading speed by 50% by implementing Shimmer UI for web pages with delayed API response times.`
-#### `Implemented react-router-dom for seamless routing and created a feature-rich Cart functionality using Redux Toolkit for smooth order placement.`
-#### `Incorporated lazy loading techniques to enhance application performance`
+### `Developed a centralized platform using React.JS, Redux and Tailwind CSS`
+### `Reduced website loading speed by 50% by implementing Shimmer UI for web pages with delayed API response times.`
+### `Implemented react-router-dom for seamless routing and created a feature-rich Cart functionality using Redux Toolkit for smooth order placement.`
+### `Incorporated lazy loading techniques to enhance application performance`
 #
 #
 #
