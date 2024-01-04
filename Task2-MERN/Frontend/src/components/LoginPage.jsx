@@ -50,7 +50,6 @@ const LoginPage = () => {
       );
       console.error("Login error", error);
     } finally {
-      // Reset loading state regardless of success or failure
       setLoading(false);
       setLoginData({
         username: "",
@@ -103,9 +102,14 @@ const LoginPage = () => {
           >
             {loading ? "Logging in..." : "Login"}
           </button>
+          <p className="text-red-400 font-bold">
+            {loading
+              ? "it may take some time depending upon backend free hosting response time"
+              : ""}
+          </p>
 
           <p className="mt-4">
-            Not registered yet?{" "}
+            Not registered yet?
             <Link to="/register" className="text-blue-500">
               Register Here
             </Link>

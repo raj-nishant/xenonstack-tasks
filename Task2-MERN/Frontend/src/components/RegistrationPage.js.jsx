@@ -12,6 +12,7 @@ const RegistrationPage = () => {
 
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [loading, setLoading] = useState(false); // Added loading state
 
   const handleRegistrationChange = (e) => {
     const { name, value } = e.target;
@@ -24,6 +25,8 @@ const RegistrationPage = () => {
 
   const handleRegistrationSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true); // Set loading to true when submitting the form
+
     try {
       const response = await axios.post(
         "https://test-9pak.onrender.com/register",
@@ -38,19 +41,26 @@ const RegistrationPage = () => {
       }, 1500);
     } catch (error) {
       setSuccessMessage("");
-      setErrorMessage("Registration failed. Account already exist.");
+      setErrorMessage("Registration failed. Account already exists.");
       console.log(error);
+    } finally {
+      setLoading(false);
+      setRegistrationData({
+        username: "",
+        password: "",
+      });
     }
-    setRegistrationData({
-      username: "",
-      password: "",
-    });
   };
 
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded shadow-md">
         <h1 className="text-2xl mb-4 font-bold">Registration Form</h1>
+        {loading && (
+          <div className="font-bold text-lg text-blue-500 mb-4">
+            Registering...
+          </div>
+        )}
         {successMessage && (
           <div className="font-bold text-lg text-green-500 mb-4">
             {successMessage}
@@ -87,8 +97,9 @@ const RegistrationPage = () => {
           <button
             className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
             type="submit"
+            disabled={loading} // Disable the button when loading
           >
-            Register
+            {loading ? "Registering..." : "Register"}
           </button>
 
           <p className="mt-4">

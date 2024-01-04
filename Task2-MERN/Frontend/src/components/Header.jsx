@@ -38,8 +38,11 @@ const Header = function () {
             <li className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3">
               <Link to="/cart">Cart {cartItems.length}</Link>
             </li>
-            <li className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3">
-              <Link to="/login">login</Link>
+            <li
+              className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3"
+              onClick={() => setIsLoggedIn(!isLoggedIn)}
+            >
+              <Link to="/login">{isLoggedIn ? "login" : "logout"}</Link>
             </li>
           </ul>
         </div>
