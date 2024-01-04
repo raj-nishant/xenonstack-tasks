@@ -63,8 +63,6 @@ app.post("/api/contact", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
-    // Validate data if needed
-
     // Save the contact form data to MongoDB
     const contact = new Contact({ name, email, message });
     await contact.save();

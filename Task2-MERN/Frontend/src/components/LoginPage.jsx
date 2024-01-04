@@ -26,7 +26,7 @@ const LoginPage = () => {
 
     try {
       const response = await axios.post(
-        "https://xenonstack-icy9.onrender.com/login",
+        "https://test-9pak.onrender.com/login",
         loginData
       );
       const { success, message } = response.data;

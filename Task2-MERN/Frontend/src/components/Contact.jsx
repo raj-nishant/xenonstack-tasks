@@ -22,7 +22,7 @@ const Contact = () => {
 
     try {
       const response = await axios.post(
-        "https://xenonstack-icy9.onrender.com/api/contact",
+        "https://test-9pak.onrender.com/api/contact",
         formData
       );
       setSuccessMessage(response.data.message);
