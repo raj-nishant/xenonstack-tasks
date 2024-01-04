@@ -8,7 +8,7 @@ const Title = () => {
       <Link to="/">
         <img
           className="h-16 p-2"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB40nkA2mZWsu_mwD7M4hWuAbkRNKAVhFsG2mwVSXY14Mj65CX3iI4-KpAjEp7YK5wnEM&usqp=CAU"
+          src="https://e7.pngegg.com/pngimages/938/880/png-clipart-graphics-computer-icons-restaurant-logo-food-before-volleyball-serve-food-orange.png"
           alt="Logo"
         />
       </Link>
@@ -27,7 +27,7 @@ const Header = function () {
       <div className="flex justify-between items-center bg-gradient-to-r from-orange-700 to-orange-500 text-white p-4">
         <Title />
         <div className="nav-items">
-          <ul className="flex space-x-4">
+          <ul className="flex space-x-6">
             <li className="hover:text-gray-300">
               <Link to="/">Home</Link>
             </li>
@@ -39,7 +39,10 @@ const Header = function () {
             </li>
             <li className="hover:text-gray-300">
               <Link to="/cart">
-                Cart <span className="text-orange-300">{cartItems.length}</span>
+                Cart{" "}
+                <span className="text-black font-bold bg-white rounded-full px-2">
+                  {cartItems.length}
+                </span>
               </Link>
             </li>
             <li
