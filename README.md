@@ -7,9 +7,11 @@
 ## Architecture
 ![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/3a372951-d95e-43d5-ae7b-6a7d010db9ec)
 
-
-
-# To run it on your local system
+#
+#
+#
+# `Task2 MERN`
+## To run it on your local system
 #### Clone this repo
 #### change directory -> cd Task2-MERN\Backend  & cd Task2-MERN\Frontend
                         
