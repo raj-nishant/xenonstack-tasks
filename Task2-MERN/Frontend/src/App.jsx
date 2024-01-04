@@ -50,7 +50,7 @@ const App = createBrowserRouter([
         element: <Cart />,
       },
       {
-        path: "/registration",
+        path: "/register",
         element: (
           <Suspense fallback={<h1>Loading......</h1>}>
             <RegistrationPage />

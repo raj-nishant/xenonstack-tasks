@@ -14,7 +14,7 @@ const LoginPage = () => {
 
     try {
       const response = await axios.post(
-        "https://xenon6565.onrender.com/login",
+        "http://localhost:8000/login",
         loginData
       );
       const { success, message } = response.data;
@@ -79,7 +79,7 @@ const LoginPage = () => {
 
           <p className="mt-4">
             Not registered yet?{" "}
-            <Link to="/registration" className="text-blue-500">
+            <Link to="/register" className="text-blue-500">
               Register Here
             </Link>
           </p>

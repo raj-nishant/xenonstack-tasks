@@ -1,9 +1,8 @@
 const express = require("express");
 const app = express();
 const port = 8000;
-const mongoose = require("mongoose"); // Import mongoose
+const mongoose = require("mongoose");
 
-// Replace the dbConnection with your actual database connection logic
 const connectDB = require("./db/dbConnection");
 const User = require("./db/user");
 const cors = require("cors");

@@ -21,7 +21,7 @@ const RegistrationPage = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://xenon6565.onrender.com/api/register",
+        "http://localhost:8000/register",
         registrationData
       );
       console.log(response.data);
