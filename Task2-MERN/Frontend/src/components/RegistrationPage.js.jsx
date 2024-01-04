@@ -8,6 +8,9 @@ const RegistrationPage = () => {
     password: "",
   });
 
+  const [error, setError] = useState(null);
+  const [successMessage, setSuccessMessage] = useState(null);
+
   const handleRegistrationChange = (e) => {
     const { name, value } = e.target;
 
@@ -24,9 +27,11 @@ const RegistrationPage = () => {
         "http://localhost:8000/register",
         registrationData
       );
-      console.log(response.data);
+      setSuccessMessage(response.data.message); // assuming the server sends a message upon success
+      setError(null);
     } catch (error) {
-      console.log(error);
+      setError(error.response.data.message);
+      setSuccessMessage(null);
     }
     setRegistrationData({
       username: "",
@@ -39,6 +44,9 @@ const RegistrationPage = () => {
       <div className="bg-white p-8 rounded shadow-md">
         <h1 className="text-2xl mb-4 font-bold">Registration Form</h1>
         <form onSubmit={handleRegistrationSubmit}>
+          {error && <p className="text-red-500">{error}</p>}
+          {successMessage && <p className="text-green-500">{successMessage}</p>}
+
           <div className="mb-4">
             <input
               className="border p-2 w-full"
