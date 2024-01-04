@@ -1,3 +1,14 @@
+# `Task1 Linux`
+## Flowchart of the script
+![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/a27fd441-9cdb-44be-955e-0756a3679c71)
+
+
+
+## Architecture
+![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/3a372951-d95e-43d5-ae7b-6a7d010db9ec)
+
+
+
 # To run it on your local system
 #### Clone this repo
 #### change directory -> cd Task2-MERN\Backend  & cd Task2-MERN\Frontend
