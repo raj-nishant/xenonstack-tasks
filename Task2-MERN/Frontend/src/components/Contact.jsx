@@ -39,7 +39,7 @@ const Contact = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto mt-8">
+    <div className="max-w-md mx-auto mt-8 h-[80vh]">
       {successMessage && (
         <div className="bg-green-200 text-green-800 p-3 mb-4 rounded">
           {successMessage}

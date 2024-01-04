@@ -5,10 +5,13 @@ import { useSelector } from "react-redux";
 const Title = () => {
   return (
     <h1 id="title" key="title">
-      <img
-        className="h-16 p-2"
-        src="https://e7.pngegg.com/pngimages/938/880/png-clipart-graphics-computer-icons-restaurant-logo-food-before-volleyball-serve-food-orange.png"
-      ></img>
+      <Link to="/">
+        <img
+          className="h-16 p-2"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB40nkA2mZWsu_mwD7M4hWuAbkRNKAVhFsG2mwVSXY14Mj65CX3iI4-KpAjEp7YK5wnEM&usqp=CAU"
+          alt="Logo"
+        />
+      </Link>
     </h1>
   );
 };
@@ -21,28 +24,29 @@ const Header = function () {
 
   return (
     <>
-      <div className="flex justify-between bg-orange-800 text-white">
+      <div className="flex justify-between items-center bg-gradient-to-r from-orange-700 to-orange-500 text-white p-4">
         <Title />
         <div className="nav-items">
-          <ul className="flex py-6">
-            <li className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3">
-              <Link>Home</Link>
+          <ul className="flex space-x-4">
+            <li className="hover:text-gray-300">
+              <Link to="/">Home</Link>
             </li>
-            <li className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3">
+            <li className="hover:text-gray-300">
               <Link to="/about">About</Link>
             </li>
-            <li className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3">
+            <li className="hover:text-gray-300">
               <Link to="/contact">Contact Us</Link>
             </li>
-
-            <li className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3">
-              <Link to="/cart">Cart {cartItems.length}</Link>
+            <li className="hover:text-gray-300">
+              <Link to="/cart">
+                Cart <span className="text-orange-300">{cartItems.length}</span>
+              </Link>
             </li>
             <li
-              className="px-3 shadow hover:bg-zinc-50 hover:text-black mr-3"
+              className="cursor-pointer hover:text-gray-300"
               onClick={() => setIsLoggedIn(!isLoggedIn)}
             >
-              <Link to="/login">{isLoggedIn ? "login" : "logout"}</Link>
+              <Link to="/login">{isLoggedIn ? "Login" : "Logout"}</Link>
             </li>
           </ul>
         </div>
@@ -50,4 +54,5 @@ const Header = function () {
     </>
   );
 };
+
 export default Header;

@@ -5,7 +5,7 @@ const Cart = () => {
   const cartItems = useSelector((store) => store.cart.items);
   // console.log(cartItems);
   return (
-    <>
+    <div className="h-[80vh]">
       <div className="text-5xl text-center font-bold">cart Items</div>
 
       <div className="flex flex-wrap mt-16">
@@ -13,7 +13,7 @@ const Cart = () => {
           return <CartMenu {...eachItem} />;
         })}
       </div>
-    </>
+    </div>
   );
 };
 
