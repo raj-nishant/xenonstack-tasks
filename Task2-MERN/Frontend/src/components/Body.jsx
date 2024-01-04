@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ItemCard from "./ItemCard";
 import Shimmer from "./Shimmer";
-import { filterData } from "../utils/helper";
 
 const Body = () => {
   const [filteredItems, setFilteredItems] = useState([]);
@@ -26,6 +25,14 @@ const Body = () => {
       console.error("Error fetching data:", error);
       setLoading(false);
     }
+  }
+
+  function filterData(searchText, allItems) {
+    const filterData = allItems.filter((each) => {
+      return each?.title?.toLowerCase()?.includes(searchText.toLowerCase());
+    });
+    console.log(filterData);
+    return filterData;
   }
 
   return loading ? (
