@@ -2,10 +2,11 @@
 ## Flowchart of the script
 ![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/a27fd441-9cdb-44be-955e-0756a3679c71)
 
-
-
 ## Architecture
 ![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/3a372951-d95e-43d5-ae7b-6a7d010db9ec)
+
+## some outputs
+![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/e4835539-230d-4fe4-a6b7-23e155b03027)
 
 #
 #
@@ -29,4 +30,8 @@
 #
 ![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/d3ab319d-d7c1-4c22-9118-12829cb41b22)
 ![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/fe1c4eeb-a7a2-4176-a2f4-edccc2a2fdf2)
-![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/541640bb-49c9-4301-ac09-a4906c19a086)
+
+### Backend with MongoDB (image attached of data stored in mongodb after successful form submission)
+![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/13e1a38d-8c83-437c-9ddd-ab4e69194dfc)
+![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/53dee07b-fc6e-4910-8043-4f82491c509b)
+
