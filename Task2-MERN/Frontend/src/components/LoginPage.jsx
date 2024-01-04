@@ -1,12 +1,17 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const LoginPage = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const [loginData, setLoginData] = useState({
     username: "",
     password: "",
   });
+
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   //submit function
   const handleLoginSubmit = async (e) => {
@@ -20,11 +25,20 @@ const LoginPage = () => {
       const { success, message } = response.data;
 
       if (success) {
+        setSuccessMessage("Login successful!");
+        setErrorMessage(""); // Clear any previous error messages
         console.log("Login Successfully");
+
+        // Redirect to the homepage after a successful login
+        navigate("/");
       } else {
+        setSuccessMessage(""); // Clear any previous success messages
+        setErrorMessage(message);
         console.log(message);
       }
     } catch (error) {
+      setSuccessMessage(""); // Clear any previous success messages
+      setErrorMessage("Login error. Please try again.");
       console.error("Login error", error);
     }
     setLoginData({
@@ -45,6 +59,12 @@ const LoginPage = () => {
     <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded shadow-md">
         <h1 className="text-2xl mb-4 font-bold">Login Page</h1>
+        {successMessage && (
+          <div className="text-green-500 mb-4">{successMessage}</div>
+        )}
+        {errorMessage && (
+          <div className="text-red-500 mb-4">{errorMessage}</div>
+        )}
         <form onSubmit={handleLoginSubmit}>
           <div className="mb-4">
             <input

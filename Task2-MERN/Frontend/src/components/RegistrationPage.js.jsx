@@ -1,15 +1,17 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const RegistrationPage = () => {
+  const navigate = useNavigate(); // Initialize useNavigate
+
   const [registrationData, setRegistrationData] = useState({
     username: "",
     password: "",
   });
 
-  const [error, setError] = useState(null);
-  const [successMessage, setSuccessMessage] = useState(null);
+  const [successMessage, setSuccessMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleRegistrationChange = (e) => {
     const { name, value } = e.target;
@@ -27,11 +29,16 @@ const RegistrationPage = () => {
         "http://localhost:8000/register",
         registrationData
       );
-      setSuccessMessage(response.data.message); // assuming the server sends a message upon success
-      setError(null);
+      setSuccessMessage("Registration successful!");
+      setErrorMessage(""); // Clear any previous error messages
+      console.log(response.data);
+
+      // Redirect to the homepage after a successful registration
+      navigate("/login");
     } catch (error) {
-      setError(error.response.data.message);
-      setSuccessMessage(null);
+      setSuccessMessage(""); // Clear any previous success messages
+      setErrorMessage("Registration failed. Please try again.");
+      console.log(error);
     }
     setRegistrationData({
       username: "",
@@ -43,10 +50,13 @@ const RegistrationPage = () => {
     <div className="min-h-screen flex items-center justify-center">
       <div className="bg-white p-8 rounded shadow-md">
         <h1 className="text-2xl mb-4 font-bold">Registration Form</h1>
+        {successMessage && (
+          <div className="text-green-500 mb-4">{successMessage}</div>
+        )}
+        {errorMessage && (
+          <div className="text-red-500 mb-4">{errorMessage}</div>
+        )}
         <form onSubmit={handleRegistrationSubmit}>
-          {error && <p className="text-red-500">{error}</p>}
-          {successMessage && <p className="text-green-500">{successMessage}</p>}
-
           <div className="mb-4">
             <input
               className="border p-2 w-full"
