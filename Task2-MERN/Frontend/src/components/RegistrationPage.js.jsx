@@ -29,7 +29,7 @@ const RegistrationPage = () => {
         "https://test-9pak.onrender.com/register",
         registrationData
       );
-      setSuccessMessage("Registration successful!");
+      setSuccessMessage("Registration successful!, Redirecting to login...");
       setErrorMessage("");
       console.log(response.data);
 
@@ -38,7 +38,7 @@ const RegistrationPage = () => {
       }, 1500);
     } catch (error) {
       setSuccessMessage("");
-      setErrorMessage("Registration failed. Please try again.");
+      setErrorMessage("Registration failed. Account already exist.");
       console.log(error);
     }
     setRegistrationData({
