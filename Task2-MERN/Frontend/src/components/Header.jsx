@@ -8,7 +8,7 @@ const Title = () => {
       <Link to="/">
         <img
           className="h-16 p-2"
-          src="https://e7.pngegg.com/pngimages/938/880/png-clipart-graphics-computer-icons-restaurant-logo-food-before-volleyball-serve-food-orange.png"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB40nkA2mZWsu_mwD7M4hWuAbkRNKAVhFsG2mwVSXY14Mj65CX3iI4-KpAjEp7YK5wnEM&usqp=CAU"
           alt="Logo"
         />
       </Link>
