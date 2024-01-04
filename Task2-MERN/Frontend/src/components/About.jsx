@@ -2,7 +2,7 @@ import { Outlet } from "react-router-dom";
 
 const About = () => {
   return (
-    <div className="aboutPage bg-white p-8 rounded-lg shadow-md h-[80vh]">
+    <div className="aboutPage bg-white p-8 rounded-lg shadow-md h-auto">
       <h1 className="text-4xl font-bold mb-6 text-gray-800">
         About [Your E-commerce Website Name]
       </h1>

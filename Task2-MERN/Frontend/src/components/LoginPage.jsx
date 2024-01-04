@@ -104,7 +104,7 @@ const LoginPage = () => {
           </button>
           <p className="text-red-400 font-bold">
             {loading
-              ? "it may take some time depending upon backend free hosting response time"
+              ? "It may take some time, depending upon response time of my backend hosting service(free one)"
               : ""}
           </p>
 
