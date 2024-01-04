@@ -21,7 +21,7 @@ const Header = function () {
 
   return (
     <>
-      <div className="flex justify-between bg-orange-900 text-white">
+      <div className="flex justify-between bg-orange-800 text-white">
         <Title />
         <div className="nav-items">
           <ul className="flex py-6">
