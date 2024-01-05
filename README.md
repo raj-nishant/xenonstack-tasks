@@ -17,13 +17,16 @@
 ### `Used MongoDB for data storage and Node.js & Express.js for creating API endpoints`
 #
 #
-![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/d3ab319d-d7c1-4c22-9118-12829cb41b22)
+![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/e5a8514d-4465-4ca2-8a10-5fbb45c4b6e8)
+
 #
 #
-![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/fe1c4eeb-a7a2-4176-a2f4-edccc2a2fdf2)
+![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/b1199f55-731a-4803-95bd-7fff5229de39)
+
 
 ### `Backend with MongoDB (image attached of data stored in mongodb after successful form submission)`
-![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/13e1a38d-8c83-437c-9ddd-ab4e69194dfc)
+![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/9a64b4f0-0af3-4c56-a009-cfede4a78ce9)
+
 ![image](https://github.com/raj-nishant/xenonstack-tasks/assets/79581018/53dee07b-fc6e-4910-8043-4f82491c509b)
 
 #
