@@ -58,7 +58,8 @@ const RegistrationPage = () => {
         <h1 className="text-2xl mb-4 font-bold">Registration Form</h1>
         {loading && (
           <div className="font-bold text-lg text-blue-500 mb-4">
-            Registering...
+            It may take some time, depending upon response time of my backend
+            hosting service(free one)
           </div>
         )}
         {successMessage && (
