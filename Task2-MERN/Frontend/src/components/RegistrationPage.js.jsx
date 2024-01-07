@@ -29,7 +29,7 @@ const RegistrationPage = () => {
 
     try {
       const response = await axios.post(
-        "https://test-9pak.onrender.com/register",
+        "https://https://test-58j0.onrender.com/register",
         registrationData
       );
       setSuccessMessage("Registration successful!, Redirecting to login...");
